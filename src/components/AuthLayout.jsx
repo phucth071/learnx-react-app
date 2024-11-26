@@ -57,8 +57,8 @@ const AuthLayout = ({ type = 'login' }) => {
         setIsLoading(true);
         try {
             const result = await AuthService.login(email, password);
-            if (result === undefined) {
-                toast.error('Error from server, please try again later!');
+            if (result.error === true) {
+                toast.error(result.response.data.message);
                 return;
             }
             if (result.code === 200) {

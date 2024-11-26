@@ -95,7 +95,10 @@ class AuthService {
                 return res.data;
             })
             .catch((err) => {
-                console.log(err);
+                return {
+                    error: true,
+                    response: err.response,
+                }
             });
     };
 

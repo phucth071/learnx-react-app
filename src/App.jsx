@@ -33,6 +33,7 @@ import { AuthProvider } from './contexts/auth/AuthContext';
 // services
 import Loader from './components/Loader';
 import AuthService from './services/auth/auth.service';
+import SampleQuill from '@pages/SampleQuill.jsx';
 
 function App() {
     // const { mode, setMode } = useColorScheme();
@@ -69,6 +70,12 @@ function App() {
                         <Route path="/submission/:assignmentId" element={<Submission />} />
                         <Route path="/logout" element={<Logout />} />
                         <Route path="/add-course" element={<AddCourse />} />
+
+                        <Route path="/sample-quill" element={<SampleQuill/>} />
+
+                        <Route path="/404" element={<h1>404 - Not Found</h1>} />
+
+                        <Route path="*" element={<h1>404 - Not Found</h1>} />
                     </Routes>
                 </div>
             </Suspense>
